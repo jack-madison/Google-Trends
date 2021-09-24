@@ -161,4 +161,4 @@ trends_data_prefecture = trends_data_prefecture.drop(['raw_daily', 'calc_weekly'
 trends_data_prefecture.columns = [str(kw[0])+'_trend', 'prefecture']
 
 # Export the data as a CSV
-trends_data_prefecture.to_csv('./trends_data_prefecture.csv')
+trends_data_prefecture.to_csv('./' + str(kw[0]) + '_trends_data_prefecture.csv')
