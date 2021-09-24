@@ -1,6 +1,6 @@
 # Google-Trends
 
-This repository contains python code used to collect Google Trends data on a specific keyword between 2019 and 2020. Since daily Google Trends data is not available for time periods longer than 9 months, I had to rescale the daily data using the weekly data in order to make the different years comparable. I use the method outlined in Brodeur,  Clark,  Fleche,  and  Powdthavee  (2021).
+This repository contains python code used to collect daily Google Trends data on a specific keyword between 2019 and 2020. Since daily Google Trends data is not available for time periods longer than 9 months, I had to rescale the daily data using the weekly data in order to make the different years comparable. I use the method outlined in Brodeur,  Clark,  Fleche,  and  Powdthavee  (2021).
 
 ## References
 
