@@ -6,7 +6,7 @@ import numpy as np
 
 # Initialize the API, set the keyword, and specify the region
 pytrends = TrendReq()
-kw = ['舌下免疫療法']
+kw = ['花粉症']
 region = 'JP'
 
 # Google Trends weekly data is aggregated from Sunday to Saturday i.e. the first
@@ -122,7 +122,7 @@ trends_data['normalized_weighted_daily'] = (trends_data['weighted_daily'] / max_
 ### Export the data ###
 #######################
 
-trends_data.to_csv('./' + str(kw[0]).replace('+', '_') + '_trends_data.csv')
+trends_data.to_csv('./brodeur_method/brodeur_method_data/' + str(kw[0]).replace('+', '_') + '_trends_data.csv')
 
 ######################
 ### Graph the data ###

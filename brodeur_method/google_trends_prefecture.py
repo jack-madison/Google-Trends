@@ -164,4 +164,4 @@ trends_data_prefecture = trends_data_prefecture.drop(['raw_daily', 'calc_weekly'
 trends_data_prefecture.columns = [str(kw[0]).replace('+', '_')+'_trend', 'prefecture']
 
 # Export the data as a CSV
-trends_data_prefecture.to_csv('./' + str(kw[0]).replace('+', '_') + '_trends_data_prefecture.csv')
+trends_data_prefecture.to_csv('./brodeur_method/brodeur_method_data/' + str(kw[0]).replace('+', '_') + '_trends_data_prefecture.csv')
