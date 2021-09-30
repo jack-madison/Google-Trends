@@ -7,8 +7,8 @@ from pytrends.exceptions import ResponseError
 
 ### Taken from https://github.com/qztseng/google-trends-daily
 
-pytrend = TrendReq(hl='en-US')
-keyword = '花粉症'
+pytrend = TrendReq()
+keyword = '舌下免疫療法'
 start = '2018-12-30'
 end = '2021-01-02'
 geo='JP'
@@ -149,4 +149,4 @@ def get_daily_trend(trendreq, keyword:str, start:str, end:str, cat=0,
 
 overlapping = get_daily_trend(pytrend, keyword, start, end, geo=geo, cat=cat, gprop=gprop, verbose=True, tz=0)
 
-overlapping.to_csv("./tseng_data.csv")
+overlapping.to_csv('./tseng_method/tseng_method_data/' + str(keyword).replace('+', '_') + '_trends_data.csv')
