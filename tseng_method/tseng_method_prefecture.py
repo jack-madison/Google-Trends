@@ -8,7 +8,7 @@ from pytrends.exceptions import ResponseError
 ### Taken from https://github.com/qztseng/google-trends-daily
 
 pytrend = TrendReq()
-keyword = '舌下免疫療法'
+keyword = 'アレジオン+アレグラ+クラリチン'
 start = '2018-12-30'
 end = '2021-01-02'
 geo='JP'
