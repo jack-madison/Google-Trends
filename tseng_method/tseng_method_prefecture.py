@@ -8,9 +8,9 @@ from pytrends.exceptions import ResponseError
 ### Taken from https://github.com/qztseng/google-trends-daily
 
 pytrend = TrendReq()
-keyword = 'アレジオン+アレグラ+クラリチン'
+keyword = '鼻水+鼻づまり+くしゃみ+目のかゆみ'
 start = '2018-12-30'
-end = '2021-01-02'
+end = '2021-07-03'
 geo='JP'
 cat=0
 gprop=''
