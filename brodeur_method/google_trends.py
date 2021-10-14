@@ -6,7 +6,7 @@ import numpy as np
 
 # Initialize the API, set the keyword, and specify the region
 pytrends = TrendReq()
-kw = ['舌下免疫療法']
+kw = ['花粉症']
 region = 'JP'
 
 # Google Trends weekly data is aggregated from Sunday to Saturday i.e. the first

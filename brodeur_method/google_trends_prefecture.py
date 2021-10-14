@@ -7,7 +7,7 @@ import time
 
 # Initialize the API, set the keyword, specify the region, and create the prefecture list
 pytrends = TrendReq()
-kw = ['アレジオン+アレグラ+クラリチン']
+kw = ['花粉症']
 region = 'JP'
 
 prefectures = {'Hokkaido': '01', 'Aomori': '02', 'Iwate': '03', 'Miyagi': '04', 'Akita': '05', 'Yamagata': '06',
