@@ -1,5 +1,5 @@
 /* Imort the raw data collected in python */
-import delimited "C:\Users\jack-\OneDrive\Documents\google_trends\prefecture_level\pollen\pollen_trends_data.csv", delimiter(comma) varnames(1)
+import delimited "C:\Users\jack-\OneDrive\Documents\Hitoshi RA Files\google_trends_1819\prefecture_level\symptoms\symptoms_trends_data.csv", delimiter(comma) varnames(1)
 
 /* Extract the year, month, and day values from the date variable */
 gen year=real(substr(date,1,4))
@@ -23,19 +23,20 @@ bysort week_of prefecture: egen calc_weekly = mean(raw_daily)
 
 /* Calculate the weights to be applied to the daily data */
 gen weight = raw_weekly / calc_weekly
+replace weight = 0 if missing(weight)
 
 /* Apply the weights to the daily data */
 gen weighted_daily = raw_daily * weight
 
 /* Find the maximum of the weighted daily data */
-egen max_weighted_daily = max(weighted_daily)
+bysort prefecture: egen max_weighted_daily = max(weighted_daily)
 
 /* Scale the weighted daily data by the maximum of the weighted daily data*/
-gen pollen_harmonized_daily = (weighted_daily / max_weighted_daily) * 100
+gen symptoms_harmonized_daily = (weighted_daily / max_weighted_daily) * 100
 
 /* Clean up the unnessesary variables and reorder the variables */
 drop week_of calc_weekly weight weighted_daily max_weighted_daily
-order date
+gsort prefecture date
 
 /* Export the data */
-export delimited "C:\Users\jack-\OneDrive\Documents\google_trends\prefecture_level\pollen\pollen_trends_data_harmonized.csv"
+export delimited "C:\Users\jack-\OneDrive\Documents\Hitoshi RA Files\google_trends_1819\prefecture_level\symptoms\symptoms_trends_data_harmonized.csv"
