@@ -106,6 +106,9 @@ for x in prefectures:
         # Turn the date index into a column
         trends_data = trends_data.reset_index()
 
+        # Remove duplicate rows
+        trends_data = trends_data.drop_duplicates(subset = ['date'], keep = 'last')
+
         # Assign the prefecture name to the column 'prefecture'
         trends_data['prefecture'] = x
 
