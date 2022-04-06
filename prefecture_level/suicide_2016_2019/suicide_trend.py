@@ -48,12 +48,12 @@ for x in prefectures:
         ##################################################################
 
         # Build the payload for the daily data between January 2016 and June 2016
-        pytrends.build_payload(kw, timeframe='2015-12-27 2017-07-02', geo = str(region) + '-' + str(prefectures[x]))
+        pytrends.build_payload(kw, timeframe='2015-12-27 2016-07-02', geo = str(region) + '-' + str(prefectures[x]))
         # Request the interest over time data for the time interval specified above
         daily_jan_jun_2016 = pytrends.interest_over_time()
 
         # Build the payload for the daily data between July 2016 and December 2016
-        pytrends.build_payload(kw, timeframe='2017-07-03 2017-12-31', geo = str(region) + '-' + str(prefectures[x]))
+        pytrends.build_payload(kw, timeframe='2016-07-03 2016-12-31', geo = str(region) + '-' + str(prefectures[x]))
         # Request the interest over time data for the time interval specified above
         daily_jul_dec_2016 = pytrends.interest_over_time()
 
@@ -95,7 +95,7 @@ for x in prefectures:
         daily_2016_2019.columns.values[0] = "raw_daily"
 
         # Merge the weekly and daily trends data
-        trends_data = pd.merge(daily_2016_2019, weekly_2016_2019, how = 'left', left_index = True, right_index = True)
+        trends_data = pd.merge(daily_2016_2019, weekly_2016_2019, how = 'left', on = 'date')
 
         # Forward fill the raw_weekly data
         trends_data['raw_weekly'] = trends_data['raw_weekly'].fillna(method = 'ffill')
