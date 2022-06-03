@@ -92,4 +92,4 @@ trends_data = trends_data.reset_index()
 trends_data = trends_data.drop_duplicates(subset = ['date'], keep = 'last')
 
 # Output to csv
-trends_data.to_csv('./country_level/suicide/suicide_trends_data.csv', index = False)
+trends_data.to_csv('./country_level/suicide1_2016_2019/suicide1_trends_data.csv', index = False)

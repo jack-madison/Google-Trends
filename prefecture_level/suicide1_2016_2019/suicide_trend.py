@@ -125,4 +125,4 @@ for x in prefectures:
         pass
 
 # Export the data
-trends_data_prefecture.to_csv('./prefecture_level/suicide_2016_2019/suicide_trends_data.csv', index = False)
+trends_data_prefecture.to_csv('./prefecture_level/suicide1_2016_2019/suicide1_trends_data.csv', index = False)
