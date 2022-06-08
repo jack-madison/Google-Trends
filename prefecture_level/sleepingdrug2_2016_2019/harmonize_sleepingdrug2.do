@@ -1,5 +1,5 @@
 /* Imort the raw data collected in python */
-import delimited "C:\Users\jack-\OneDrive\Documents\GitHub\Google-Trends\prefecture_level\suicide1_2016_2019\suicide1_trends_data.csv", delimiter(comma) varnames(1)
+import delimited "C:\Users\jack-\OneDrive\Documents\GitHub\Google-Trends\prefecture_level\sleepingdrug2_2016_2019\sleepingdrug2_trends_data.csv", delimiter(comma) varnames(1)
 
 /* Extract the year, month, and day values from the date variable */
 gen year=real(substr(date,1,4))
@@ -32,7 +32,7 @@ gen weighted_daily = raw_daily * weight
 bysort prefecture: egen max_weighted_daily = max(weighted_daily)
 
 /* Scale the weighted daily data by the maximum of the weighted daily data*/
-gen suicide1_harmonized_daily = (weighted_daily / max_weighted_daily) * 100
+gen sleepingdrug2_harmonized_daily = (weighted_daily / max_weighted_daily) * 100
 
 /* Clean up the unnessesary variables and reorder the variables */
 drop week_of calc_weekly weight weighted_daily max_weighted_daily
@@ -40,4 +40,4 @@ gsort prefecture date
 order date prefecture
 
 /* Export the data */
-export delimited "C:\Users\jack-\OneDrive\Documents\GitHub\Google-Trends\prefecture_level\suicide1_2016_2019\suicide1_trends_data_harmonized.csv"
+export delimited "C:\Users\jack-\OneDrive\Documents\GitHub\Google-Trends\prefecture_level\sleepingdrug2_2016_2019\sleepingdrug2_trends_data_harmonized.csv"
